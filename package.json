@@ -1,0 +1,29 @@
+{
+    "name": "peerflix-binding",
+    "license": "MIT",
+    "author": "Alexey Metz",
+    "version": "0.0.1",
+    "description": "Watch torrent using Peerflix (https://github.com/mafintosh/peerflix)",
+    "homepage": "https://github.com/Anakros/peerflix-binding",
+    "main": "main.js",
+    "permissions": {
+        "private-browsing": true,
+        "multiprocess": true
+    },
+    "preferences": [
+        {
+            "name": "player",
+            "title": "Peerflix location",
+            "description": "Specify peerflix executable full path",
+            "type": "string",
+            "value": "/usr/local/bin/peerflix"
+        },
+        {
+            "name": "params",
+            "title": "Additional player parameters",
+            "description": "Specify additional parameters (autoplay in mpv and not on top by default)",
+            "type": "string",
+            "value": "-k -d"
+        }
+    ]
+}
