@@ -2,8 +2,8 @@
     "name": "peerflix-binding",
     "license": "MIT",
     "author": "Alexey Metz",
-    "version": "0.0.1",
-    "description": "Watch torrent using Peerflix (https://github.com/mafintosh/peerflix)",
+    "version": "0.0.2",
+    "description": "Watch torrents using Peerflix, streaming torrent client. External program (https://github.com/mafintosh/peerflix) is required for this addon to work, you should install it using npm.",
     "homepage": "https://github.com/Anakros/peerflix-binding",
     "main": "main.js",
     "permissions": {

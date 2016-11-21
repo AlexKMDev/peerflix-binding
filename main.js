@@ -13,7 +13,7 @@ function play(url) {
   var args = [url]
 
   if (params) {
-    args.push(params.split(" "))
+    args.push(...params.split(' '));
   }
 
   process.runAsync(args, args.length);
