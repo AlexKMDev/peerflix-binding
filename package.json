@@ -2,7 +2,7 @@
     "name": "peerflix-binding",
     "license": "MIT",
     "author": "Alexey Metz",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "Watch torrents using Peerflix, streaming torrent client. External program (https://github.com/mafintosh/peerflix) is required for this addon to work, you should install it using npm.",
     "homepage": "https://github.com/Anakros/peerflix-binding",
     "main": "main.js",
@@ -24,6 +24,13 @@
             "description": "Specify additional parameters (autoplay in mpv and not on top by default)",
             "type": "string",
             "value": "-k -d"
+        },
+        {
+            "name": "nodejs",
+            "title": "NodeJS location",
+            "description": "Specify directory of NodeJS location",
+            "type": "string",
+            "value": "/usr/local/bin/"
         }
     ]
 }

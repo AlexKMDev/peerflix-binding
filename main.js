@@ -1,11 +1,16 @@
 var simplePrefs = require('sdk/simple-prefs');
 const {Cc, Ci} = require('chrome');
 var contextMenu = require('sdk/context-menu');
+var { env } = require('sdk/system/environment');
 
 function play(url) {
   if (validScheme(url) == false) {
     console.log("invalid scheme");
     return;
+  }
+
+  if (simplePrefs.prefs.nodejs) {
+    env.PATH += ':' + simplePrefs.prefs.nodejs
   }
 
   var file = Cc['@mozilla.org/file/local;1'].createInstance(Ci.nsIFile);
@@ -21,7 +26,11 @@ function play(url) {
     args.push(...params.split(' '));
   }
 
-  process.runAsync(args, args.length);
+  process.runAsync(args, args.length, observer);
+}
+
+function observer(subject, topic, data) {
+  console.log(subject, topic, data)
 }
 
 function validScheme(url) {
@@ -35,6 +44,6 @@ contextMenu.Item({
   contentScript: 'self.on("click", function(node, data) {' + 
                  '  self.postMessage(node.href);' +
                  '})',
-  accessKey: 'e',
+  accessKey: 'g',
   onMessage: play
 });
